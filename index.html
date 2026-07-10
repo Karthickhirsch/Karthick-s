@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Karthick S — Senior Automation Test Engineer. 5+ years in UI & API test automation with Python, Selenium, and BDD frameworks." />
+  <meta name="author" content="Karthick S" />
+  <meta name="theme-color" content="#0a0e1a" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Karthick S — Senior Automation Test Engineer" />
+  <meta property="og:description" content="5+ years designing scalable UI & API automation frameworks with Python, Selenium & BDD." />
+
+  <title>Karthick S — Senior Automation Test Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%E2%9C%94</text></svg>" />
+</head>
+<body>
+  <!-- Progress bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Animated background -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="#home" class="nav__logo">
+      <span class="nav__logo-bracket">&lt;</span>KS<span class="nav__logo-bracket">/&gt;</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="home">
+    <div class="hero__content">
+      <div class="hero__avatar" id="avatar">
+        <div class="hero__avatar-ring"></div>
+        <img src="assets/karthick.jpg" alt="Karthick S" class="hero__avatar-img" id="avatarImg"
+             onerror="this.style.display='none'; document.getElementById('avatar').classList.add('is-placeholder');" />
+        <span class="hero__avatar-fallback">KS</span>
+        <span class="hero__avatar-badge" title="Available">✓</span>
+      </div>
+      <p class="hero__eyebrow">
+        <span class="status-dot"></span> Available for new opportunities
+      </p>
+      <h1 class="hero__title">
+        Karthick S
+      </h1>
+      <div class="hero__role">
+        <span class="hero__role-static">I automate</span>
+        <span class="hero__role-typed" id="typed"></span>
+        <span class="hero__cursor">|</span>
+      </div>
+      <p class="hero__desc">
+        Senior Automation Test Engineer with <strong>5+ years</strong> designing scalable, maintainable
+        UI &amp; API automation frameworks. I turn fragile manual workflows into reliable, self-running
+        test suites — delivering a <strong>98% defect-detection rate</strong> and <strong>50% faster</strong> test cycles.
+      </p>
+      <div class="hero__actions">
+        <a href="#work" class="btn btn--primary">View My Work</a>
+        <a href="#contact" class="btn btn--ghost">Get in Touch</a>
+      </div>
+      <div class="hero__stats">
+        <div class="stat"><span class="stat__num" data-count="5">0</span><span class="stat__plus">+</span><span class="stat__label">Years Experience</span></div>
+        <div class="stat"><span class="stat__num" data-count="98">0</span><span class="stat__plus">%</span><span class="stat__label">Defect Detection</span></div>
+        <div class="stat"><span class="stat__num" data-count="50">0</span><span class="stat__plus">%</span><span class="stat__label">Faster Cycles</span></div>
+      </div>
+    </div>
+
+    <!-- Terminal card -->
+    <div class="hero__terminal">
+      <div class="terminal">
+        <div class="terminal__bar">
+          <span class="terminal__dot terminal__dot--red"></span>
+          <span class="terminal__dot terminal__dot--yellow"></span>
+          <span class="terminal__dot terminal__dot--green"></span>
+          <span class="terminal__title">behave --tags=@regression</span>
+        </div>
+        <div class="terminal__body" id="terminalBody"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="section__head">
+        <span class="section__index">01</span>
+        <h2 class="section__title">About Me</h2>
+        <div class="section__line"></div>
+      </div>
+      <div class="about">
+        <div class="about__text">
+          <p>
+            I'm a <strong>Senior Automation Test Engineer</strong> based in Chennai, India, specializing in
+            building robust test automation across the <strong>security, insurance, and annuity</strong> domains.
+          </p>
+          <p>
+            My toolbox centers on <strong>Python, Selenium WebDriver, and Behave/Cucumber BDD</strong>, architected
+            with the Page Object Model and data-driven design. I'm also an early adopter of
+            <strong>AI-assisted development</strong> — using Cursor AI and Claude to accelerate test authoring
+            and dramatically expand coverage.
+          </p>
+          <p>
+            Whether it's functional, regression, sanity, or end-to-end testing, I obsess over reliability,
+            maintainability, and shipping quality software fast within Agile teams.
+          </p>
+          <div class="about__highlights">
+            <div class="chip">🐍 Python-first automation</div>
+            <div class="chip">🤖 AI-assisted testing</div>
+            <div class="chip">🔁 CI/CD with GitHub Actions</div>
+            <div class="chip">📊 Data-driven frameworks</div>
+          </div>
+        </div>
+        <aside class="about__card">
+          <div class="about__card-row"><span>📍 Location</span><strong>Chennai, India</strong></div>
+          <div class="about__card-row"><span>🎓 Education</span><strong>B.E. CSE — 8.60 CGPA</strong></div>
+          <div class="about__card-row"><span>💼 Role</span><strong>Sr. Automation Test Engineer</strong></div>
+          <div class="about__card-row"><span>🌐 Languages</span><strong>English, Tamil</strong></div>
+          <div class="about__card-row"><span>⚡ Focus</span><strong>UI &amp; API Automation</strong></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="section__head">
+        <span class="section__index">02</span>
+        <h2 class="section__title">Technical Skills</h2>
+        <div class="section__line"></div>
+      </div>
+      <div class="skills-grid" id="skillsGrid">
+        <div class="skill-card">
+          <div class="skill-card__icon">&lt;/&gt;</div>
+          <h3>Languages</h3>
+          <div class="tags">
+            <span>Python</span><span>Java</span><span>SQL</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__icon">🧪</div>
+          <h3>Test Automation</h3>
+          <div class="tags">
+            <span>Selenium WebDriver</span><span>Behave (BDD)</span><span>Cucumber</span><span>Page Object Model</span><span>TestNG</span><span>Pytest</span><span>Rest Assured</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__icon">🤖</div>
+          <h3>AI-Assisted Dev</h3>
+          <div class="tags">
+            <span>Cursor AI</span><span>Claude (Anthropic)</span><span>AI Test Authoring</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__icon">🔌</div>
+          <h3>API Testing</h3>
+          <div class="tags">
+            <span>Postman</span><span>ReadyAPI</span><span>Rest Assured</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__icon">🔧</div>
+          <h3>CI/CD &amp; VCS</h3>
+          <div class="tags">
+            <span>Git</span><span>GitHub</span><span>GitHub Actions</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__icon">🗄️</div>
+          <h3>Databases</h3>
+          <div class="tags">
+            <span>MS SQL Server</span><span>Oracle SQL</span><span>PostgreSQL</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__icon">📋</div>
+          <h3>Test Management</h3>
+          <div class="tags">
+            <span>JIRA</span><span>qTest</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card__icon">🎯</div>
+          <h3>Testing Types</h3>
+          <div class="tags">
+            <span>Functional</span><span>Regression</span><span>Sanity</span><span>Smoke</span><span>API</span><span>UI</span><span>Data-Driven</span><span>E2E</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <div class="section__head">
+        <span class="section__index">03</span>
+        <h2 class="section__title">Experience</h2>
+        <div class="section__line"></div>
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-card__head">
+              <h3>Senior Automation Test Engineer</h3>
+              <span class="tl-badge tl-badge--now">Apr 2025 — Present</span>
+            </div>
+            <p class="tl-company">Hirsch Private Limited · Chennai, India</p>
+            <p class="tl-domain">🔐 Physical Security &amp; Access Control</p>
+            <ul>
+              <li>Design end-to-end UI automation for the <strong>Velocity</strong> web application using Python, Selenium WebDriver &amp; Behave BDD.</li>
+              <li>Build maintainable, reusable automation with the Page Object Model and data-driven design backed by externalized JSON test data.</li>
+              <li>Leverage <strong>Cursor AI &amp; Claude</strong> to accelerate BDD scenario and step-definition authoring, improving speed and coverage.</li>
+              <li>Integrate automated regression suites into <strong>GitHub Actions</strong> CI/CD pipelines for continuous, reliable execution.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-card__head">
+              <h3>Senior Test Engineer</h3>
+              <span class="tl-badge">May 2021 — Mar 2025</span>
+            </div>
+            <p class="tl-company">Cognizant Technology Solutions · Chennai, India</p>
+            <p class="tl-domain">🏦 Life Insurance &amp; Annuities</p>
+            <ul>
+              <li><strong>American Equity (AEL Insurance):</strong> Developed automated tests in Python &amp; Pytest for insurance/annuity products; maintained the Java Selenium framework.</li>
+              <li>Managed the full defect lifecycle in JIRA and qTest, tracking progress and reporting to stakeholders.</li>
+              <li><strong>Guardian Life Insurance (ESQA):</strong> Achieved <strong>98% test coverage</strong> and a <strong>98% defect-detection rate</strong>.</li>
+              <li>Reduced overall testing time by <strong>50%</strong> through reusable scenarios; trained and mentored new joiners.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK / PROJECTS -->
+    <section class="section" id="work">
+      <div class="section__head">
+        <span class="section__index">04</span>
+        <h2 class="section__title">Featured Work</h2>
+        <div class="section__line"></div>
+      </div>
+      <div class="projects">
+        <article class="project">
+          <div class="project__glow"></div>
+          <div class="project__top">
+            <span class="project__tag">Physical Security</span>
+            <span class="project__icon">🔐</span>
+          </div>
+          <h3>Velocity Automation Suite</h3>
+          <p>End-to-end UI automation for a physical security &amp; access-control platform. Built a scalable POM + data-driven framework with externalized JSON test data.</p>
+          <div class="project__stack">
+            <span>Python</span><span>Selenium</span><span>Behave</span><span>POM</span>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project__glow"></div>
+          <div class="project__top">
+            <span class="project__tag">Insurance &amp; Annuity</span>
+            <span class="project__icon">🏦</span>
+          </div>
+          <h3>AEL Insurance Automation</h3>
+          <p>Python &amp; Pytest automation for life insurance and annuity products, maintaining a hybrid Java Selenium framework with full JIRA/qTest defect management.</p>
+          <div class="project__stack">
+            <span>Python</span><span>Pytest</span><span>Java</span><span>qTest</span>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project__glow"></div>
+          <div class="project__top">
+            <span class="project__tag">E2E Recon</span>
+            <span class="project__icon">📊</span>
+          </div>
+          <h3>Guardian ESQA — TRR Testing</h3>
+          <p>Independently managed End-to-End Recon testing for trade message reconciliation, achieving 98% coverage and driving a 50% reduction in test cycle time.</p>
+          <div class="project__stack">
+            <span>BDD</span><span>Cucumber</span><span>Rest Assured</span><span>SQL</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section section--contact" id="contact">
+      <div class="section__head">
+        <span class="section__index">05</span>
+        <h2 class="section__title">Get In Touch</h2>
+        <div class="section__line"></div>
+      </div>
+      <div class="contact">
+        <h3 class="contact__headline">Let's build reliable software together.</h3>
+        <p class="contact__sub">Open to Senior Automation Test Engineer / SDET roles. I usually respond within a day.</p>
+        <div class="contact__links">
+          <a href="mailto:karthickyuvisri@gmail.com" class="contact-link">
+            <span class="contact-link__icon">✉️</span>
+            <span class="contact-link__label">Email</span>
+            <span class="contact-link__value">karthickyuvisri@gmail.com</span>
+          </a>
+          <a href="tel:+916382026795" class="contact-link">
+            <span class="contact-link__icon">📞</span>
+            <span class="contact-link__label">Phone</span>
+            <span class="contact-link__value">+91 63820 26795</span>
+          </a>
+          <a href="#home" class="contact-link">
+            <span class="contact-link__icon">📍</span>
+            <span class="contact-link__label">Location</span>
+            <span class="contact-link__value">Chennai, India</span>
+          </a>
+        </div>
+        <a href="mailto:karthickyuvisri@gmail.com?subject=Opportunity%20for%20Karthick" class="btn btn--primary btn--lg">Say Hello 👋</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Designed &amp; built by <strong>Karthick S</strong> · Automated with care 🤖</p>
+    <p class="footer__meta">© <span id="year"></span> · Made with ❤️ in Chennai</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
