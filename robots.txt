@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO: replace with your live URL
+Sitemap: https://karthick-s.github.io/sitemap.xml
