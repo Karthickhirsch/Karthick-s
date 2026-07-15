@@ -168,6 +168,7 @@
       { label: 'Quality & Delivery', kind: 'section', icon: '📊', target: '#quality' },
       { label: 'Playground', kind: 'section', icon: '🎮', target: '#playground' },
       { label: 'Experience', kind: 'section', icon: '❐', target: '#experience' },
+      { label: 'Certifications', kind: 'section', icon: '🏅', target: '#certifications' },
       { label: 'Featured Work', kind: 'section', icon: '✦', target: '#work' },
       { label: 'Contact', kind: 'section', icon: '✉', target: '#contact' },
       { label: 'Preview Résumé', kind: 'action', icon: '📄', modal: 'resume' },
@@ -764,14 +765,6 @@
         .then((r) => { if (!r.ok) throw new Error('status ' + r.status); return r.json(); })
         .then((d) => {
           document.getElementById('ghRepos').textContent = d.public_repos != null ? d.public_repos : '—';
-          document.getElementById('ghFollowers').textContent = d.followers != null ? d.followers : '—';
-          document.getElementById('ghFollowing').textContent = d.following != null ? d.following : '—';
-          return fetch('https://api.github.com/users/' + user + '/repos?per_page=100&sort=updated');
-        })
-        .then((r) => (r && r.ok ? r.json() : []))
-        .then((repos) => {
-          const stars = Array.isArray(repos) ? repos.reduce((s, x) => s + (x.stargazers_count || 0), 0) : 0;
-          document.getElementById('ghStars').textContent = stars;
         })
         .catch(() => fail('Live stats unavailable right now.'));
     };
@@ -780,6 +773,79 @@
       entries.forEach((e) => { if (e.isIntersecting) { load(); io.unobserve(e.target); } });
     }, { threshold: 0.2 });
     io.observe(gh);
+  })();
+
+  /* ---------- Certifications (auto-loaded from repo folder) ---------- */
+  (function certifications() {
+    const root = document.getElementById('certs');
+    if (!root) return;
+    const grid = document.getElementById('certsGrid');
+    const status = document.getElementById('certsStatus');
+    const repo = root.dataset.repo;
+    const branch = root.dataset.branch || 'main';
+    const path = (root.dataset.path || '').replace(/^\/+|\/+$/g, '');
+    const repoUrl = 'https://github.com/' + repo + '/tree/' + branch + '/' + path;
+
+    const IMG = ['png', 'jpg', 'jpeg', 'gif', 'webp', 'svg', 'avif', 'bmp'];
+    const ext = (name) => (name.split('.').pop() || '').toLowerCase();
+    const prettify = (name) =>
+      name.replace(/\.[^.]+$/, '').replace(/[_]+/g, ' ').replace(/\s+/g, ' ').trim();
+
+    const setStatus = (html, isError) => {
+      if (!status) return;
+      status.innerHTML = html;
+      status.classList.toggle('certs__status--error', !!isError);
+      status.hidden = false;
+    };
+
+    const render = (files) => {
+      grid.innerHTML = files
+        .map((f) => {
+          const e = ext(f.name);
+          const isImg = IMG.includes(e);
+          const thumb = isImg
+            ? '<span class="cert__thumb"><img src="' + f.url + '" alt="' + prettify(f.name) + '" loading="lazy" /></span>'
+            : '<span class="cert__thumb cert__thumb--file" data-ext="' + (e || 'file').toUpperCase() + '">' + (e ? e.toUpperCase() : 'FILE') + '</span>';
+          return (
+            '<a class="cert" href="' + f.url + '" target="_blank" rel="noopener" title="' + prettify(f.name) + '">' +
+            thumb +
+            '<span class="cert__body"><span class="cert__name">' + prettify(f.name) + '</span>' +
+            '<span class="cert__meta">' + (e ? e.toUpperCase() + ' · ' : '') + 'View ↗</span></span>' +
+            '</a>'
+          );
+        })
+        .join('');
+      grid.hidden = false;
+      status.hidden = true;
+    };
+
+    const load = () => {
+      const api = 'https://api.github.com/repos/' + repo + '/contents/' + path + '?ref=' + branch;
+      fetch(api, { headers: { Accept: 'application/vnd.github+json' } })
+        .then((r) => { if (!r.ok) throw new Error('status ' + r.status); return r.json(); })
+        .then((items) => {
+          const files = (Array.isArray(items) ? items : [])
+            .filter((it) => it.type === 'file' && !/^\./.test(it.name) && it.name.toLowerCase() !== 'readme.md')
+            .sort((a, b) => a.name.localeCompare(b.name))
+            .map((it) => ({ name: it.name, url: it.download_url || it.html_url }));
+          if (!files.length) {
+            setStatus('No certificates published yet. <a href="' + repoUrl + '" target="_blank" rel="noopener">Browse the folder ↗</a>');
+            return;
+          }
+          render(files);
+        })
+        .catch(() => {
+          setStatus(
+            'Certificates load once the site is deployed. <a href="' + repoUrl + '" target="_blank" rel="noopener">View them on GitHub ↗</a>',
+            true
+          );
+        });
+    };
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { load(); io.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    io.observe(root);
   })();
 
   /* ---------- Active nav link on scroll ---------- */
