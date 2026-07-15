@@ -9,16 +9,15 @@
   <meta name="theme-color" content="#05060d" />
   <meta name="robots" content="index, follow" />
 
-  <!-- TODO: replace SITE_URL with your live GitHub Pages / custom domain URL -->
-  <link rel="canonical" href="https://karthick-s.github.io/" />
+  <link rel="canonical" href="https://karthickhirsch.github.io/Karthick-s/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Karthick S — Portfolio" />
   <meta property="og:title" content="Karthick S — Senior Automation Test Engineer" />
   <meta property="og:description" content="5+ years designing scalable UI & API automation frameworks with Python, Selenium & BDD." />
-  <meta property="og:url" content="https://karthick-s.github.io/" />
-  <meta property="og:image" content="https://karthick-s.github.io/assets/og-image.png" />
+  <meta property="og:url" content="https://karthickhirsch.github.io/Karthick-s/" />
+  <meta property="og:image" content="https://karthickhirsch.github.io/Karthick-s/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Karthick S — Senior Automation Test Engineer" />
@@ -27,7 +26,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Karthick S — Senior Automation Test Engineer" />
   <meta name="twitter:description" content="5+ years designing scalable UI & API automation frameworks with Python, Selenium & BDD." />
-  <meta name="twitter:image" content="https://karthick-s.github.io/assets/og-image.png" />
+  <meta name="twitter:image" content="https://karthickhirsch.github.io/Karthick-s/assets/og-image.png" />
 
   <title>Karthick S — Senior Automation Test Engineer</title>
 
@@ -46,8 +45,8 @@
     "name": "Karthick S",
     "jobTitle": "Senior Automation Test Engineer",
     "description": "Senior Automation Test Engineer with 5+ years designing scalable UI & API automation frameworks with Python, Selenium and BDD.",
-    "url": "https://karthick-s.github.io/",
-    "image": "https://karthick-s.github.io/assets/og-image.png",
+    "url": "https://karthickhirsch.github.io/Karthick-s/",
+    "image": "https://karthickhirsch.github.io/Karthick-s/assets/og-image.png",
     "email": "mailto:karthickyuvisri@gmail.com",
     "telephone": "+91-63820-26795",
     "address": {
@@ -68,6 +67,8 @@
   </script>
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
   <!-- Progress bar -->
   <div class="scroll-progress" id="scrollProgress"></div>
 
@@ -80,7 +81,7 @@
     <a href="#home" class="nav__logo">
       <span class="nav__logo-bracket">&lt;</span>KS<span class="nav__logo-bracket">/&gt;</span>
     </a>
-    <ul class="nav__links">
+    <ul class="nav__links" id="navMenu">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#automation">Automation</a></li>
@@ -90,7 +91,7 @@
       <li><a href="#work">Work</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
       <span></span><span></span><span></span>
     </button>
   </nav>
@@ -98,16 +99,20 @@
   <!-- HERO -->
   <header class="hero" id="home">
     <div class="hero__content">
-      <div class="hero__avatar" id="avatar">
-        <div class="hero__avatar-ring"></div>
-        <img src="assets/karthick.jpg" alt="Karthick S" class="hero__avatar-img" id="avatarImg"
-             onerror="this.style.display='none'; document.getElementById('avatar').classList.add('is-placeholder');" />
-        <span class="hero__avatar-fallback">KS</span>
-        <span class="hero__avatar-badge" title="Available">✓</span>
+      <div class="hero__intro">
+        <div class="hero__avatar" id="avatar">
+          <div class="hero__avatar-ring"></div>
+          <img src="assets/karthick.jpg" alt="Portrait of Karthick S" class="hero__avatar-img" id="avatarImg"
+               width="120" height="120" decoding="async" fetchpriority="high"
+               onerror="this.style.display='none'; document.getElementById('avatar').classList.add('is-placeholder');" />
+          <span class="hero__avatar-fallback">KS</span>
+          <span class="hero__avatar-badge" title="Available">✓</span>
+        </div>
+        <p class="hero__eyebrow">
+          <span class="status-dot"></span>
+          <span class="hero__eyebrow-text">Available for new opportunities</span>
+        </p>
       </div>
-      <p class="hero__eyebrow">
-        <span class="status-dot"></span> Available for new opportunities
-      </p>
       <h1 class="hero__title">
         Karthick S
       </h1>
@@ -116,6 +121,7 @@
         <span class="hero__role-typed" id="typed"></span>
         <span class="hero__cursor">|</span>
       </div>
+      <p class="hero__punch">SDET who turns flaky, manual QA into <strong>98%-reliable</strong> self-running automation.</p>
       <p class="hero__desc">
         Senior Automation Test Engineer with <strong>5+ years</strong> designing scalable, maintainable
         UI &amp; API automation frameworks. I turn fragile manual workflows into reliable, self-running
@@ -152,7 +158,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
     <!-- ABOUT -->
     <section class="section" id="about">
       <div class="section__head">
@@ -550,7 +556,12 @@
             <span class="project__icon">🔐</span>
           </div>
           <h3>Velocity Automation Suite</h3>
-          <p>End-to-end UI automation for a physical security &amp; access-control platform. Built a scalable POM + data-driven framework with externalized JSON test data.</p>
+          <p>End-to-end UI automation for a physical security &amp; access-control platform.</p>
+          <dl class="case">
+            <div class="case__row"><dt>Problem</dt><dd>Manual regression of the Velocity web app was slow and error-prone, holding up releases.</dd></div>
+            <div class="case__row"><dt>Approach</dt><dd>Built a scalable Page Object Model + data-driven framework with externalized JSON test data, wired into GitHub Actions CI.</dd></div>
+            <div class="case__row"><dt>Impact</dt><dd>Reliable, self-running regression on every push — faster feedback and far less manual effort.</dd></div>
+          </dl>
           <div class="project__stack">
             <span>Python</span><span>Selenium</span><span>Behave</span><span>POM</span>
           </div>
@@ -563,7 +574,12 @@
             <span class="project__icon">🏦</span>
           </div>
           <h3>AEL Insurance Automation</h3>
-          <p>Python &amp; Pytest automation for life insurance and annuity products, maintaining a hybrid Java Selenium framework with full JIRA/qTest defect management.</p>
+          <p>Automated coverage for complex life-insurance &amp; annuity products.</p>
+          <dl class="case">
+            <div class="case__row"><dt>Problem</dt><dd>Intricate insurance/annuity flows needed dependable coverage across a hybrid Java Selenium framework.</dd></div>
+            <div class="case__row"><dt>Approach</dt><dd>Built Python &amp; Pytest suites, maintained the legacy Java framework, and drove the defect lifecycle in JIRA &amp; qTest.</dd></div>
+            <div class="case__row"><dt>Impact</dt><dd>Broader automated coverage with stakeholder-visible reporting and a tighter, traceable defect loop.</dd></div>
+          </dl>
           <div class="project__stack">
             <span>Python</span><span>Pytest</span><span>Java</span><span>qTest</span>
           </div>
@@ -576,7 +592,12 @@
             <span class="project__icon">📊</span>
           </div>
           <h3>Guardian ESQA — TRR Testing</h3>
-          <p>Independently managed End-to-End Recon testing for trade message reconciliation, achieving 98% coverage and driving a 50% reduction in test cycle time.</p>
+          <p>End-to-end reconciliation testing for trade-message processing.</p>
+          <dl class="case">
+            <div class="case__row"><dt>Problem</dt><dd>E2E recon testing for trade message reconciliation was manual, slow, and hard to repeat.</dd></div>
+            <div class="case__row"><dt>Approach</dt><dd>Independently owned the E2E recon suite using BDD/Cucumber, Rest Assured for APIs, and SQL for data validation.</dd></div>
+            <div class="case__row"><dt>Impact</dt><dd><strong>98% coverage</strong> and a <strong>50% reduction</strong> in test-cycle time.</dd></div>
+          </dl>
           <div class="project__stack">
             <span>BDD</span><span>Cucumber</span><span>Rest Assured</span><span>SQL</span>
           </div>
@@ -594,6 +615,17 @@
       <div class="contact">
         <h3 class="contact__headline">Let's build reliable software together.</h3>
         <p class="contact__sub">Open to Senior Automation Test Engineer / SDET roles. I usually respond within a day.</p>
+
+        <!-- Quick hiring facts. TODO: update Notice Period & Work Mode to match your situation. -->
+        <ul class="hire-facts">
+          <li><span class="hire-facts__k">Experience</span><span class="hire-facts__v">5+ years</span></li>
+          <li><span class="hire-facts__k">Target Roles</span><span class="hire-facts__v">Sr. Automation Test Engineer · SDET</span></li>
+          <li><span class="hire-facts__k">Location</span><span class="hire-facts__v">Chennai, India</span></li>
+          <li><span class="hire-facts__k">Work Mode</span><span class="hire-facts__v">Hybrid / Remote</span></li>
+          <li><span class="hire-facts__k">Notice Period</span><span class="hire-facts__v">60 days</span></li>
+          <li><span class="hire-facts__k">Availability</span><span class="hire-facts__v hire-facts__v--live"><span class="hire-facts__dot"></span>Open to offers</span></li>
+        </ul>
+
         <div class="contact__links">
           <div class="contact-link">
             <a class="contact-link__main" href="mailto:karthickyuvisri@gmail.com">
@@ -706,10 +738,11 @@
     </div>
   </div>
 
-  <!-- Privacy-friendly analytics (GoatCounter). TODO: create a free account at goatcounter.com
-       and replace YOURCODE with your site code to start collecting anonymous visit stats. -->
-  <script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <!-- Privacy-friendly analytics (GoatCounter). TODO: create a free account at goatcounter.com,
+       replace YOURCODE with your site code, then UNCOMMENT the line below to start collecting
+       anonymous visit stats. Left disabled so it doesn't fire a failing request. -->
+  <!-- <script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script> -->
 
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
 </body>
 </html>

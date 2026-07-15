@@ -27,16 +27,20 @@
   onScroll();
 
   if (navToggle) {
+    const setMenu = (open) => {
+      navToggle.classList.toggle('open', open);
+      navLinks.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', String(open));
+    };
     navToggle.addEventListener('click', () => {
-      navToggle.classList.toggle('open');
-      navLinks.classList.toggle('open');
+      setMenu(!navLinks.classList.contains('open'));
     });
     navLinks.querySelectorAll('a').forEach((a) =>
-      a.addEventListener('click', () => {
-        navToggle.classList.remove('open');
-        navLinks.classList.remove('open');
-      })
+      a.addEventListener('click', () => setMenu(false))
     );
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('open')) setMenu(false);
+    });
   }
 
   /* ---------- Typing effect (hero role) ---------- */
